@@ -23,9 +23,8 @@ function logVisitors(ip) {
 }
 
 app.get('/', (req, res) => {
-  res.send('Hello World');
   logVisitors(req.ip);
-
+  res.send('Counter is: '+ counter);
 });
 
 app.listen(PORT, HOST);
