@@ -2,9 +2,9 @@ FROM node:12
 WORKDIR /usr/src/app
 
 
-ENV HOST=$HOST
-ENV PORT=$PORT
-ENV LOGFILE=$LOGFILE
+ENV HOST=$HOST \
+    PORT=$PORT \
+    LOGFILE=$LOGFILE
 
 COPY package*.json ./
 RUN npm install
