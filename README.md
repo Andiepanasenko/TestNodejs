@@ -16,15 +16,15 @@ nano .env  #add values
 ```
 nano Dockerfile #add values  
 ```
-5.Clone GitRepo on our remote environment
+4.Clone GitRepo on our remote environment
 ```
 git clone git@github.com:Andiepanasenko/TestNodejs.git
 ```
-6.Build the image
+5.Build the image
 ```
 docker build -t nodejs-server .
 ```
-7.Run the container
+6.Run the container
 ```
 docker run -d --name nodejs-server -v $(pwd)/data:/usr/src/app/data --env .env -p 8082:8082 nodejs-server
 ```
