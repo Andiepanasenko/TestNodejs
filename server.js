@@ -16,7 +16,7 @@ function logVisitors(ip) {
   let currentDate = new Date();
   counter++;
   let log = counter + '\t' + currentDate + '\t' + ip + '\r';
-  fs.appendFile(LOGFILE, log, function (err) {
+  fs.appendFile('data/'+LOGFILE, log, function (err) {
   if (err) return console.log(err);
   console.log(log);
 });
@@ -25,6 +25,7 @@ function logVisitors(ip) {
 app.get('/', (req, res) => {
   logVisitors(req.ip);
   res.send('Counter is: '+ counter);
+
 });
 
 app.listen(PORT, HOST);

@@ -6,12 +6,12 @@ ENV HOST=$HOST \
     PORT=$PORT \
     LOGFILE=$LOGFILE
 
-COPY package*.json ./
-RUN npm install
+COPY package.json .
+COPY server.js .
 
-COPY . .
+RUN npm install
+RUN mkdir data
 
 
 EXPOSE 8082
 CMD [ "node", "server.js" ]
-
